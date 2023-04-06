@@ -9,37 +9,37 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PETSearch
 build_property.RootNamespace = PETSearch
-build_property.ProjectDir = F:\FACULTATE\AN 3\SEM II\II\PROJECT\pETsearch\PETSearch\
+build_property.ProjectDir = C:\Users\emanu\Desktop\PetSearch\PETsearch\PETSearch\PETSearch\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\FACULTATE\AN 3\SEM II\II\PROJECT\pETsearch\PETSearch
+build_property.MSBuildProjectDirectory = C:\Users\emanu\Desktop\PetSearch\PETsearch\PETSearch\PETSearch
 build_property._RazorSourceGeneratorDebug = 
 
-[F:/FACULTATE/AN 3/SEM II/II/PROJECT/pETsearch/PETSearch/Views/Home/Index.cshtml]
+[C:/Users/emanu/Desktop/PetSearch/PETsearch/PETSearch/PETSearch/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/FACULTATE/AN 3/SEM II/II/PROJECT/pETsearch/PETSearch/Views/Home/Privacy.cshtml]
+[C:/Users/emanu/Desktop/PetSearch/PETsearch/PETSearch/PETSearch/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/FACULTATE/AN 3/SEM II/II/PROJECT/pETsearch/PETSearch/Views/Shared/Error.cshtml]
+[C:/Users/emanu/Desktop/PetSearch/PETsearch/PETSearch/PETSearch/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/FACULTATE/AN 3/SEM II/II/PROJECT/pETsearch/PETSearch/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/emanu/Desktop/PetSearch/PETsearch/PETSearch/PETSearch/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/FACULTATE/AN 3/SEM II/II/PROJECT/pETsearch/PETSearch/Views/_ViewImports.cshtml]
+[C:/Users/emanu/Desktop/PetSearch/PETsearch/PETSearch/PETSearch/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/FACULTATE/AN 3/SEM II/II/PROJECT/pETsearch/PETSearch/Views/_ViewStart.cshtml]
+[C:/Users/emanu/Desktop/PetSearch/PETsearch/PETSearch/PETSearch/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/FACULTATE/AN 3/SEM II/II/PROJECT/pETsearch/PETSearch/Views/Shared/_Layout.cshtml]
+[C:/Users/emanu/Desktop/PetSearch/PETsearch/PETSearch/PETSearch/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-wvxnvnfgi9

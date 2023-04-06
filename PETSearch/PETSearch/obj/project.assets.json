@@ -2505,23 +2505,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marti\\.nuget\\packages\\": {},
+    "C:\\Users\\emanu\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\FACULTATE\\AN 3\\SEM II\\II\\PROJECT\\pETsearch\\PETSearch\\PETSearch.csproj",
+      "projectUniqueName": "C:\\Users\\emanu\\Desktop\\PetSearch\\PETsearch\\PETSearch\\PETSearch\\PETSearch.csproj",
       "projectName": "PETSearch",
-      "projectPath": "F:\\FACULTATE\\AN 3\\SEM II\\II\\PROJECT\\pETsearch\\PETSearch\\PETSearch.csproj",
-      "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
-      "outputPath": "F:\\FACULTATE\\AN 3\\SEM II\\II\\PROJECT\\pETsearch\\PETSearch\\obj\\",
+      "projectPath": "C:\\Users\\emanu\\Desktop\\PetSearch\\PETsearch\\PETSearch\\PETSearch\\PETSearch.csproj",
+      "packagesPath": "C:\\Users\\emanu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\emanu\\Desktop\\PetSearch\\PETsearch\\PETSearch\\PETSearch\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\emanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2582,7 +2582,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
