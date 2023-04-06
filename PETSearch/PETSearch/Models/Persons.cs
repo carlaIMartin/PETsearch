@@ -3,19 +3,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PETSearch.Models
 {
-    public class Person
+    public class Persons
     {
         [Key] public int Person_Id { get; set; }
         public string Person_Name { get; set; }
         public string Person_Email { get; set;}
 
-        [ForeignKey("Locations")]
+        [ForeignKey("LocationFKpersons")]
         public  string? Location { get; set;}
         public Locations? Locations { get; set; }
         public string Person_Username { get; set; }
         public string Person_Password { get; set; }
 
-        [ForeignKey("Animals")]
+        [ForeignKey("AnimalsFKpersons")]
         public int? Animal_Id { get; set; }
         public Animals? Animals { get; set; }
 

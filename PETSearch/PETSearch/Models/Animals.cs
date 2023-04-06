@@ -13,15 +13,11 @@ namespace PETSearch.Models
         public string Height { get; set; }
         public string Species { get; set; }
 
-        [ForeignKey("Person")]
-        public int? Person_Id { get; set; }
-        public Person? Person { get; set; }
-
-        [ForeignKey("Locations")]
+        [ForeignKey("LocationsFKanimals")]
         public string? Location { get; set; }
         public Locations? Locations { get; set; }
 
-        [ForeignKey("Clinics")]
+        [ForeignKey("ClinicsFKanimals")]
         public int? Clinic_Id { get; set; }
         public Clinics? Clinics { get; set; }
 
