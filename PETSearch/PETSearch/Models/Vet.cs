@@ -13,17 +13,12 @@ namespace PETSearch.Models
 
         public string Vet_Phone_Number { get; set; }
 
-        [ForeignKey("Locations")]
-        public string? Location { get; set; }
-
-        public Locations? Locations { get; set; }
-
-        [ForeignKey("Clinics")] 
+        [ForeignKey("Clinics")]
 
         public int? Clinic_Id { get; set; }
 
-        public string? Clinic_Name { get; set; }
         public Clinics? Clinics { get; set; }
+
 
         public string Vet_Username { get; set; }
 
