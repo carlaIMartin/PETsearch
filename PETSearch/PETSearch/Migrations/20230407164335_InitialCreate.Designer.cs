@@ -11,7 +11,7 @@ using PETSearch.Data;
 namespace PETSearch.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230326180740_InitialCreate")]
+    [Migration("20230407164335_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -31,6 +31,9 @@ namespace PETSearch.Migrations
                     b.Property<int?>("Clinic_Id")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ClinicsClinic_Id")
+                        .HasColumnType("int");
+
                     b.Property<string>("Color")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -44,7 +47,10 @@ namespace PETSearch.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Location")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("LocationsLocation_Id")
+                        .HasColumnType("int");
 
                     b.Property<string>("Race")
                         .IsRequired()
@@ -56,9 +62,9 @@ namespace PETSearch.Migrations
 
                     b.HasKey("Animal_Id");
 
-                    b.HasIndex("Clinic_Id");
+                    b.HasIndex("ClinicsClinic_Id");
 
-                    b.HasIndex("Location");
+                    b.HasIndex("LocationsLocation_Id");
 
                     b.ToTable("Animals");
                 });
@@ -74,29 +80,34 @@ namespace PETSearch.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Location")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("LocationsLocation_Id")
+                        .HasColumnType("int");
 
                     b.HasKey("Clinic_Id");
 
-                    b.HasIndex("Location");
+                    b.HasIndex("LocationsLocation_Id");
 
                     b.ToTable("Clinics");
                 });
 
             modelBuilder.Entity("PETSearch.Models.Locations", b =>
                 {
-                    b.Property<string>("Location")
-                        .HasColumnType("varchar(255)");
-
                     b.Property<int>("Location_Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.HasKey("Location");
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Location_Id");
 
                     b.ToTable("Locations");
                 });
 
-            modelBuilder.Entity("PETSearch.Models.Person", b =>
+            modelBuilder.Entity("PETSearch.Models.Persons", b =>
                 {
                     b.Property<int>("Person_Id")
                         .ValueGeneratedOnAdd()
@@ -105,8 +116,14 @@ namespace PETSearch.Migrations
                     b.Property<int?>("Animal_Id")
                         .HasColumnType("int");
 
+                    b.Property<int?>("AnimalsAnimal_Id")
+                        .HasColumnType("int");
+
                     b.Property<string>("Location")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("LocationsLocation_Id")
+                        .HasColumnType("int");
 
                     b.Property<string>("Person_Email")
                         .IsRequired()
@@ -130,14 +147,14 @@ namespace PETSearch.Migrations
 
                     b.HasKey("Person_Id");
 
-                    b.HasIndex("Animal_Id");
+                    b.HasIndex("AnimalsAnimal_Id");
 
-                    b.HasIndex("Location");
+                    b.HasIndex("LocationsLocation_Id");
 
-                    b.ToTable("Person");
+                    b.ToTable("Persons");
                 });
 
-            modelBuilder.Entity("PETSearch.Models.Vet", b =>
+            modelBuilder.Entity("PETSearch.Models.Vets", b =>
                 {
                     b.Property<int>("Vet_Id")
                         .ValueGeneratedOnAdd()
@@ -146,11 +163,8 @@ namespace PETSearch.Migrations
                     b.Property<int?>("Clinic_Id")
                         .HasColumnType("int");
 
-                    b.Property<string>("Clinic_Name")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Location")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int?>("ClinicsClinic_Id")
+                        .HasColumnType("int");
 
                     b.Property<string>("Vet_Email")
                         .IsRequired()
@@ -174,22 +188,20 @@ namespace PETSearch.Migrations
 
                     b.HasKey("Vet_Id");
 
-                    b.HasIndex("Clinic_Id");
+                    b.HasIndex("ClinicsClinic_Id");
 
-                    b.HasIndex("Location");
-
-                    b.ToTable("Vet");
+                    b.ToTable("Vets");
                 });
 
             modelBuilder.Entity("PETSearch.Models.Animals", b =>
                 {
                     b.HasOne("PETSearch.Models.Clinics", "Clinics")
                         .WithMany()
-                        .HasForeignKey("Clinic_Id");
+                        .HasForeignKey("ClinicsClinic_Id");
 
                     b.HasOne("PETSearch.Models.Locations", "Locations")
                         .WithMany()
-                        .HasForeignKey("Location");
+                        .HasForeignKey("LocationsLocation_Id");
 
                     b.Navigation("Clinics");
 
@@ -200,39 +212,33 @@ namespace PETSearch.Migrations
                 {
                     b.HasOne("PETSearch.Models.Locations", "Locations")
                         .WithMany()
-                        .HasForeignKey("Location");
+                        .HasForeignKey("LocationsLocation_Id");
 
                     b.Navigation("Locations");
                 });
 
-            modelBuilder.Entity("PETSearch.Models.Person", b =>
+            modelBuilder.Entity("PETSearch.Models.Persons", b =>
                 {
                     b.HasOne("PETSearch.Models.Animals", "Animals")
                         .WithMany()
-                        .HasForeignKey("Animal_Id");
+                        .HasForeignKey("AnimalsAnimal_Id");
 
                     b.HasOne("PETSearch.Models.Locations", "Locations")
                         .WithMany()
-                        .HasForeignKey("Location");
+                        .HasForeignKey("LocationsLocation_Id");
 
                     b.Navigation("Animals");
 
                     b.Navigation("Locations");
                 });
 
-            modelBuilder.Entity("PETSearch.Models.Vet", b =>
+            modelBuilder.Entity("PETSearch.Models.Vets", b =>
                 {
                     b.HasOne("PETSearch.Models.Clinics", "Clinics")
                         .WithMany()
-                        .HasForeignKey("Clinic_Id");
-
-                    b.HasOne("PETSearch.Models.Locations", "Locations")
-                        .WithMany()
-                        .HasForeignKey("Location");
+                        .HasForeignKey("ClinicsClinic_Id");
 
                     b.Navigation("Clinics");
-
-                    b.Navigation("Locations");
                 });
 #pragma warning restore 612, 618
         }

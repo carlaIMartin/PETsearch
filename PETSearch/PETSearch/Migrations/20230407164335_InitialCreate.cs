@@ -18,12 +18,13 @@ namespace PETSearch.Migrations
                 name: "Locations",
                 columns: table => new
                 {
-                    Location = table.Column<string>(type: "varchar(255)", nullable: false),
                     Location_Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Location = table.Column<string>(type: "longtext", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Locations", x => x.Location);
+                    table.PrimaryKey("PK_Locations", x => x.Location_Id);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -34,16 +35,17 @@ namespace PETSearch.Migrations
                     Clinic_Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Clinic_Name = table.Column<string>(type: "longtext", nullable: false),
-                    Location = table.Column<string>(type: "varchar(255)", nullable: true)
+                    Location = table.Column<string>(type: "longtext", nullable: true),
+                    LocationsLocation_Id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Clinics", x => x.Clinic_Id);
                     table.ForeignKey(
-                        name: "FK_Clinics_Locations_Location",
-                        column: x => x.Location,
+                        name: "FK_Clinics_Locations_LocationsLocation_Id",
+                        column: x => x.LocationsLocation_Id,
                         principalTable: "Locations",
-                        principalColumn: "Location");
+                        principalColumn: "Location_Id");
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -58,27 +60,29 @@ namespace PETSearch.Migrations
                     Gender = table.Column<string>(type: "longtext", nullable: false),
                     Height = table.Column<string>(type: "longtext", nullable: false),
                     Species = table.Column<string>(type: "longtext", nullable: false),
-                    Location = table.Column<string>(type: "varchar(255)", nullable: true),
-                    Clinic_Id = table.Column<int>(type: "int", nullable: true)
+                    Location = table.Column<string>(type: "longtext", nullable: true),
+                    LocationsLocation_Id = table.Column<int>(type: "int", nullable: true),
+                    Clinic_Id = table.Column<int>(type: "int", nullable: true),
+                    ClinicsClinic_Id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Animals", x => x.Animal_Id);
                     table.ForeignKey(
-                        name: "FK_Animals_Clinics_Clinic_Id",
-                        column: x => x.Clinic_Id,
+                        name: "FK_Animals_Clinics_ClinicsClinic_Id",
+                        column: x => x.ClinicsClinic_Id,
                         principalTable: "Clinics",
                         principalColumn: "Clinic_Id");
                     table.ForeignKey(
-                        name: "FK_Animals_Locations_Location",
-                        column: x => x.Location,
+                        name: "FK_Animals_Locations_LocationsLocation_Id",
+                        column: x => x.LocationsLocation_Id,
                         principalTable: "Locations",
-                        principalColumn: "Location");
+                        principalColumn: "Location_Id");
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Vet",
+                name: "Vets",
                 columns: table => new
                 {
                     Vet_Id = table.Column<int>(type: "int", nullable: false)
@@ -86,102 +90,93 @@ namespace PETSearch.Migrations
                     Vet_Name = table.Column<string>(type: "longtext", nullable: false),
                     Vet_Email = table.Column<string>(type: "longtext", nullable: false),
                     Vet_Phone_Number = table.Column<string>(type: "longtext", nullable: false),
-                    Location = table.Column<string>(type: "varchar(255)", nullable: true),
                     Clinic_Id = table.Column<int>(type: "int", nullable: true),
-                    Clinic_Name = table.Column<string>(type: "longtext", nullable: true),
+                    ClinicsClinic_Id = table.Column<int>(type: "int", nullable: true),
                     Vet_Username = table.Column<string>(type: "longtext", nullable: false),
                     Vet_Password = table.Column<string>(type: "longtext", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vet", x => x.Vet_Id);
+                    table.PrimaryKey("PK_Vets", x => x.Vet_Id);
                     table.ForeignKey(
-                        name: "FK_Vet_Clinics_Clinic_Id",
-                        column: x => x.Clinic_Id,
+                        name: "FK_Vets_Clinics_ClinicsClinic_Id",
+                        column: x => x.ClinicsClinic_Id,
                         principalTable: "Clinics",
                         principalColumn: "Clinic_Id");
-                    table.ForeignKey(
-                        name: "FK_Vet_Locations_Location",
-                        column: x => x.Location,
-                        principalTable: "Locations",
-                        principalColumn: "Location");
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Person",
+                name: "Persons",
                 columns: table => new
                 {
                     Person_Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Person_Name = table.Column<string>(type: "longtext", nullable: false),
                     Person_Email = table.Column<string>(type: "longtext", nullable: false),
-                    Location = table.Column<string>(type: "varchar(255)", nullable: true),
+                    Location = table.Column<string>(type: "longtext", nullable: true),
+                    LocationsLocation_Id = table.Column<int>(type: "int", nullable: true),
                     Person_Username = table.Column<string>(type: "longtext", nullable: false),
                     Person_Password = table.Column<string>(type: "longtext", nullable: false),
                     Animal_Id = table.Column<int>(type: "int", nullable: true),
+                    AnimalsAnimal_Id = table.Column<int>(type: "int", nullable: true),
                     Person_Phone_Number = table.Column<string>(type: "longtext", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Person", x => x.Person_Id);
+                    table.PrimaryKey("PK_Persons", x => x.Person_Id);
                     table.ForeignKey(
-                        name: "FK_Person_Animals_Animal_Id",
-                        column: x => x.Animal_Id,
+                        name: "FK_Persons_Animals_AnimalsAnimal_Id",
+                        column: x => x.AnimalsAnimal_Id,
                         principalTable: "Animals",
                         principalColumn: "Animal_Id");
                     table.ForeignKey(
-                        name: "FK_Person_Locations_Location",
-                        column: x => x.Location,
+                        name: "FK_Persons_Locations_LocationsLocation_Id",
+                        column: x => x.LocationsLocation_Id,
                         principalTable: "Locations",
-                        principalColumn: "Location");
+                        principalColumn: "Location_Id");
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Animals_Clinic_Id",
+                name: "IX_Animals_ClinicsClinic_Id",
                 table: "Animals",
-                column: "Clinic_Id");
+                column: "ClinicsClinic_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Animals_Location",
+                name: "IX_Animals_LocationsLocation_Id",
                 table: "Animals",
-                column: "Location");
+                column: "LocationsLocation_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Clinics_Location",
+                name: "IX_Clinics_LocationsLocation_Id",
                 table: "Clinics",
-                column: "Location");
+                column: "LocationsLocation_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Person_Animal_Id",
-                table: "Person",
-                column: "Animal_Id");
+                name: "IX_Persons_AnimalsAnimal_Id",
+                table: "Persons",
+                column: "AnimalsAnimal_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Person_Location",
-                table: "Person",
-                column: "Location");
+                name: "IX_Persons_LocationsLocation_Id",
+                table: "Persons",
+                column: "LocationsLocation_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vet_Clinic_Id",
-                table: "Vet",
-                column: "Clinic_Id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Vet_Location",
-                table: "Vet",
-                column: "Location");
+                name: "IX_Vets_ClinicsClinic_Id",
+                table: "Vets",
+                column: "ClinicsClinic_Id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Person");
+                name: "Persons");
 
             migrationBuilder.DropTable(
-                name: "Vet");
+                name: "Vets");
 
             migrationBuilder.DropTable(
                 name: "Animals");

@@ -8,7 +8,7 @@ namespace PETSearch.Models
         [Key] public int Clinic_Id { get; set; }
         public string Clinic_Name { get; set; }
 
-        [ForeignKey("Locations")]
+        [ForeignKey("LocationsFKclinics")]
         public string? Location { get; set; }
         public Locations? Locations { get; set; }
 

@@ -13,8 +13,8 @@ namespace PETSearch.Data
         public DbSet<Animals> Animals { get; set; }
         public DbSet<Clinics> Clinics { get; set; }
         public DbSet<Locations> Locations { get; set; }
-        public DbSet<Vet> Vet{ get; set; }
-        public DbSet<Person> Person { get; set; }
+        public DbSet<Vets> Vets{ get; set; }
+        public DbSet<Persons> Persons { get; set; }
 
     }
 }

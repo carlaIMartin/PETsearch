@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PETSearch.Models
 {
-    public class Vet
+    public class Vets
     {
         //HELLO WORLDF
         [Key] public int Vet_Id { get; set; }
@@ -14,7 +14,7 @@ namespace PETSearch.Models
 
         public string Vet_Phone_Number { get; set; }
 
-        [ForeignKey("Clinics")]
+        [ForeignKey("ClinicsFKvet")]
 
         public int? Clinic_Id { get; set; }
 
