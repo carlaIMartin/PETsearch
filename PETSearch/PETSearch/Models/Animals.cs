@@ -6,6 +6,7 @@ namespace PETSearch.Models
     public class Animals
     {
         // hello world
+        // maria here
         [Key] public int Animal_Id { get; set; }
         public string Race { get; set; }
         public string Color { get; set; }
