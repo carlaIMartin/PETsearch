@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\FACULTATE\\AN 3\\SEM II\\II\\PROIECT\\PETsearch\\PETSearch\\PETSearch\\PETSearch.csproj": {}
+    "C:\\Facultate\\An III\\Sem 2\\II [Industrial Informatics]\\Labs\\Project\\PETsearch\\PETSearch\\PETSearch\\PETSearch.csproj": {}
   },
   "projects": {
-    "F:\\FACULTATE\\AN 3\\SEM II\\II\\PROIECT\\PETsearch\\PETSearch\\PETSearch\\PETSearch.csproj": {
+    "C:\\Facultate\\An III\\Sem 2\\II [Industrial Informatics]\\Labs\\Project\\PETsearch\\PETSearch\\PETSearch\\PETSearch.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\FACULTATE\\AN 3\\SEM II\\II\\PROIECT\\PETsearch\\PETSearch\\PETSearch\\PETSearch.csproj",
+        "projectUniqueName": "C:\\Facultate\\An III\\Sem 2\\II [Industrial Informatics]\\Labs\\Project\\PETsearch\\PETSearch\\PETSearch\\PETSearch.csproj",
         "projectName": "PETSearch",
-        "projectPath": "F:\\FACULTATE\\AN 3\\SEM II\\II\\PROIECT\\PETsearch\\PETSearch\\PETSearch\\PETSearch.csproj",
-        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
-        "outputPath": "F:\\FACULTATE\\AN 3\\SEM II\\II\\PROIECT\\PETsearch\\PETSearch\\PETSearch\\obj\\",
+        "projectPath": "C:\\Facultate\\An III\\Sem 2\\II [Industrial Informatics]\\Labs\\Project\\PETsearch\\PETSearch\\PETSearch\\PETSearch.csproj",
+        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Facultate\\An III\\Sem 2\\II [Industrial Informatics]\\Labs\\Project\\PETsearch\\PETSearch\\PETSearch\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
