@@ -37,7 +37,7 @@ namespace PETSearch.Data
 
                     if (!context.Persons.Any())
                     {
-                        context.Person.AddRange(new List<Persons>()
+                        context.Persons.AddRange(new List<Persons>()
                     {
                         new Persons()
                         {
